@@ -14,10 +14,8 @@ You have arrived to the office on Monday morning to find that a change has been 
 2. [Clone Repository to Lab IDE](#step-2---clone-repository-to-lab-ide)
 3. [Update AVD to Latest Version](#step-3---update-avd-to-latest-version)
 4. [Set Lab Password environment variable](#step-4---set-lab-password-environment-variable)
-5. [Build Configs](#step-5---build-configs)
-6. [Deploy Configs](#step-6---deploy-configs)
-7. [Test Traffic](#step-7---test-traffic)
-8. [Network Ports and 802.1x Port Profiles](#step-8-optional---network-ports-and-8021x-port-profiles)
+5. [Deploy Configs](#step-5---deploy-configs)
+6. [Begin Scenario](#step-6---begin-scenario)
 
 ## STEP #1 - Launch Programmability IDE
 
@@ -67,6 +65,6 @@ From the terminal window, run the command below to execute an ansible playbook a
 make deploy
 ```
 
-## STEP #6 - Test Traffic
+## STEP #6 - Begin Scenario
 
 Begin troubleshooting!
