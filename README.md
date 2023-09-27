@@ -67,6 +67,6 @@ From the terminal window, run the command below to execute an ansible playbook a
 make deploy
 ```
 
-## STEP #6 - Test Traffic
+## STEP #6 - Begin Scenario
 
 Begin troubleshooting!
