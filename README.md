@@ -1,12 +1,12 @@
 # Back To Basics ATD - Troubleshooting Scenario
 
-This repository provides a troubleshooting scenario that may arise in an enterprise environment.  The topology is a L2LS Campus fabric built on the Dual Data Center ATD Lab. For the purposes of this troubleshooting scenario we will be focusing on site1
+This repository provides a troubleshooting scenario that may arise in an enterprise environment.  The topology is a L2LS Campus fabric built on the Dual Data Center ATD Lab. For the purposes of this troubleshooting scenario we will be focusing on site1.
 
 ![Topo](images/ATD-Campus-Topo.png)
 
 ## Scenario
 
-You have arrived to the office on Monday morning to find that a change has been made and s1-host1 is no longer able to reach s1-host2.  The hosts s1-host1 and s1-host reside in vlans 10 and 20, respectively. SVIs have been created on the hosts within their respective VLANs and a static route has been configured to provide reachability between the two VLANs. If you need additional information or assistance please ask your ATD SE.  Thank you and good luck!
+You have arrived to the office on Monday morning to find that a change has been made and s1-host1 is no longer able to reach s1-host2.  The hosts (s1-host1 and s1-host) reside in vlans 10 and 20, respectively. SVIs have been created on the hosts within their respective VLANs and a static route has been configured to provide reachability between the two VLANs. If you need additional information or assistance please ask your ATD SE.  Thank you and good luck!
 
 ## Summary of Steps to Deploy Scenario
 
