@@ -12,10 +12,9 @@ You have arrived to the office on Monday morning to find that a change has been 
 
 1. [Launch Programmability IDE](#step-1---launch-programmability-ide)
 2. [Clone Repository to Lab IDE](#step-2---clone-repository-to-lab-ide)
-3. [Update AVD to Latest Version](#step-3---update-avd-to-latest-version)
-4. [Set Lab Password environment variable](#step-4---set-lab-password-environment-variable)
-5. [Deploy Configs](#step-5---deploy-configs)
-6. [Begin Scenario](#step-6---begin-scenario)
+3. [Setup the Troubleshooting Lab Environment](#step-3---setup-the-troubleshooting-lab-environment)
+4. [Deploy Configs](#step-4---deploy-configs)
+5. [Begin Scenario](#step-5---begin-scenario)
 
 ## STEP #1 - Launch Programmability IDE
 
@@ -34,37 +33,38 @@ You have arrived to the office on Monday morning to find that a change has been 
 
 ``` bash
 cd /home/coder/project/labfiles
-git clone https://github.com/daadam4/atd-b2b-tshoot.git
+git clone https://github.com/hazardsg/atd-b2b-tshoot.git
 cd atd-b2b-tshoot
 ```
 
-## STEP #3 - Update AVD to Latest Version
+## STEP #3 - Setup the Troubleshooting Lab Environment
 
-- From the terminal session, run the following commands.
-
-``` bash
-ansible-galaxy collection install arista.avd arista.cvp --force
-export ARISTA_AVD_DIR=$(ansible-galaxy collection list arista.avd --format yaml | head -1 | cut -d: -f1)
-pip3 config set global.disable-pip-version-check true
-pip3 install -r ${ARISTA_AVD_DIR}/arista/avd/requirements.txt
-```
-
-## STEP #4 - Set Lab Password environment variable
-
-The following command sets the environment variable LABPASSPHRASE which is used later for connecting to your lab switches and creating local user password.
+- From the terminal session, run the following command.
 
 ``` bash
-export LABPASSPHRASE=`cat /home/coder/.config/code-server/config.yaml| grep "password:" | awk '{print $2}'`
+make install
 ```
 
-## STEP #5 - Deploy Configs
+## STEP #4 - Deploy Configs
 
-From the terminal window, run the command below to execute an ansible playbook and build the AVD generated configurations and store them in a local directory `intended/configs`.
+To deploy the troubleshooting lab directly to the switches , run the following command: (In CVP the configs will be out of compliance)  
 
 ``` bash
-make deploy
+make deploy-scenario
 ```
 
-## STEP #6 - Begin Scenario
+To deploy the troubleshooting lab using CloudVision, run the following command: (In CVP the the changes can be rolled back via change control)
+
+``` bash
+make deploy-scenario-cvp
+```
+
+To reset the troubleshooting lab to the correct configuration/solution, run the following command:
+
+``` bash
+make deploy-fixes
+```
+
+## STEP #5 - Begin Scenario
 
 Begin troubleshooting!
