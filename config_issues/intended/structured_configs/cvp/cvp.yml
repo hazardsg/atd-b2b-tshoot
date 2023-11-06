@@ -1,0 +1,23 @@
+---
+cvp_devices:
+  - fqdn: s1-host1
+    parentContainerName: ATD_HOSTS
+    configlets:
+      - AVD_s1-host1
+  - fqdn: s1-leaf1
+    parentContainerName: ATD_LEAFS
+    configlets:
+      - AVD_s1-leaf1
+  - fqdn: s1-leaf2
+    parentContainerName: ATD_LEAFS
+    configlets:
+      - AVD_s1-leaf2
+cvp_containers:
+  ATD_FABRIC:
+    parentContainerName: Tenant
+  ATD_HOSTS:
+    parentContainerName: ATD_FABRIC
+  ATD_LEAFS:
+    parentContainerName: ATD_FABRIC
+  ATD_SPINES:
+    parentContainerName: ATD_FABRIC

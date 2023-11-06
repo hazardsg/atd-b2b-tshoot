@@ -1,0 +1,27 @@
+---
+ATD:
+  children:
+    CVP:
+      hosts:
+        cvp:
+    ATD_FABRIC:
+      children:
+        ATD_SPINES:
+          hosts:
+        ATD_LEAFS:
+          hosts:
+            s1-leaf1:
+            s1-leaf2:
+        ATD_HOSTS:
+          hosts:
+            s1-host1:
+    ATD_FABRIC_SERVICES:
+      children:
+        ATD_SPINES:
+        ATD_LEAFS:
+        ATD_HOSTS:
+    ATD_FABRIC_PORTS:
+      children:
+        ATD_SPINES:
+        ATD_LEAFS:
+        ATD_HOSTS:

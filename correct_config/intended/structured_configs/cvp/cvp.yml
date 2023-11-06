@@ -1,0 +1,43 @@
+---
+cvp_devices:
+  - fqdn: s1-host1
+    parentContainerName: ATD_HOSTS
+    configlets:
+      - AVD_s1-host1
+  - fqdn: s1-host2
+    parentContainerName: ATD_HOSTS
+    configlets:
+      - AVD_s1-host2
+  - fqdn: s1-leaf1
+    parentContainerName: ATD_LEAFS
+    configlets:
+      - AVD_s1-leaf1
+  - fqdn: s1-leaf2
+    parentContainerName: ATD_LEAFS
+    configlets:
+      - AVD_s1-leaf2
+  - fqdn: s1-leaf3
+    parentContainerName: ATD_LEAFS
+    configlets:
+      - AVD_s1-leaf3
+  - fqdn: s1-leaf4
+    parentContainerName: ATD_LEAFS
+    configlets:
+      - AVD_s1-leaf4
+  - fqdn: s1-spine1
+    parentContainerName: ATD_SPINES
+    configlets:
+      - AVD_s1-spine1
+  - fqdn: s1-spine2
+    parentContainerName: ATD_SPINES
+    configlets:
+      - AVD_s1-spine2
+cvp_containers:
+  ATD_FABRIC:
+    parentContainerName: Tenant
+  ATD_HOSTS:
+    parentContainerName: ATD_FABRIC
+  ATD_LEAFS:
+    parentContainerName: ATD_FABRIC
+  ATD_SPINES:
+    parentContainerName: ATD_FABRIC
