@@ -53,7 +53,7 @@ To deploy the troubleshooting lab directly to the switches , run the following c
 make deploy-scenario
 ```
 
-To deploy the troubleshooting lab using CloudVision, run the following command: (In CVP the the changes can be rolled back via change control)
+To deploy the troubleshooting lab using CloudVision, run the following command: (In CVP the changes can be rolled back via change control)
 
 ``` bash
 make deploy-scenario-cvp
