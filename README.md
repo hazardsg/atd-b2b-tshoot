@@ -59,11 +59,13 @@ To deploy the troubleshooting lab using CloudVision, run the following command: 
 make deploy-scenario-cvp
 ```
 
-To reset the troubleshooting lab to the correct configuration/solution, run the following command:
+To reset the troubleshooting lab configletsto the correct configuration/solution, run the following command:
 
 ``` bash
 make deploy-fixes
 ```
+
+If the configs show out of compliance, sync the desired configs.
 
 ## STEP #5 - Begin Scenario
 
