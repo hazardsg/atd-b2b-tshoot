@@ -15,18 +15,20 @@ install: ## Setup the troubleshooting lab environment with the correct config.
 
 .PHONY: deploy-fixes
 deploy-fixes: ## Deploy the correct config/solution for the troubleshooting lab.
-	cd correct_config
 	export LABPASSPHRASE=`cat /home/coder/.config/code-server/config.yaml| grep "password:" | awk '{print $$2}'`
+	cd config_issues
+	make deploy-cvp
+	cd ../correct_config
 	make deploy-cvp
 
 .PHONY: deploy-scenario-cvp
 deploy-scenario-cvp: ## Deploy the troubleshooting scenario with cvp for the troubleshooting lab.
-	cd config_issues
 	export LABPASSPHRASE=`cat /home/coder/.config/code-server/config.yaml| grep "password:" | awk '{print $$2}'`
+	cd config_issues
 	make deploy-cvp
 
 .PHONY: deploy-scenario
 deploy-scenario: ## Deploy the troubleshooting scenario for the troubleshooting lab.
-	cd config_issues
 	export LABPASSPHRASE=`cat /home/coder/.config/code-server/config.yaml| grep "password:" | awk '{print $$2}'`
+	cd config_issues
 	make deploy

@@ -65,8 +65,6 @@ To reset the troubleshooting lab configlets to the correct configuration/solutio
 make deploy-fixes
 ```
 
-If the configs show out of compliance, sync the desired configs in CVP.
-
 ## STEP #5 - Begin Scenario
 
 Begin troubleshooting!
