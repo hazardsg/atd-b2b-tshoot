@@ -14,7 +14,6 @@ ATD:
             s1-leaf2:
         ATD_HOSTS:
           hosts:
-            s1-host1:
     ATD_FABRIC_SERVICES:
       children:
         ATD_SPINES:

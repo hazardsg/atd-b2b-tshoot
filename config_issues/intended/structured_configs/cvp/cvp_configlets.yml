@@ -13,13 +13,13 @@ cvp_configlets:
     10\n   name Ten\n!\ninterface Port-Channel1\n   description IDF1_Po4\n   no shutdown\n
     \  switchport\n   switchport trunk allowed vlan 10\n   switchport mode trunk\n!\ninterface
     Ethernet1\n   description S1-LEAF1_Ethernet4\n   no shutdown\n   channel-group
-    1 mode active\n!\ninterface Ethernet2\n   description S1-LEAF2_Ethernet4\n   shutdown\n
-    \  channel-group 1 mode active\n!\ninterface Management0\n   description oob_management\n
-    \  no shutdown\n   ip address 192.168.0.16/24\n!\ninterface Vlan10\n   description
-    In-band Management\n   ip address 10.10.10.101/24\n!\nip route 0.0.0.0/0 192.168.0.1\nip
-    route 10.0.0.0/8 10.10.10.1\nip route 0.0.0.0/0 192.168.0.1\n!\nip radius source-interface
-    Management0\n!\nmanagement api http-commands\n   protocol https\n   no shutdown\n
-    \  !\n   vrf default\n      no shutdown\n!\nend\n"
+    1 mode active\n!\ninterface Ethernet2\n   description S1-LEAF2_Ethernet4\n   no
+    shutdown\n   channel-group 1 mode active\n!\ninterface Management0\n   description
+    oob_management\n   no shutdown\n   ip address 192.168.0.16/24\n!\ninterface Vlan10\n
+    \  description In-band Management\n   ip address 10.10.10.101/24\n!\nip route
+    0.0.0.0/0 192.168.0.1\nip route 10.0.0.0/8 10.10.10.1\nip route 0.0.0.0/0 192.168.0.1\n!\nip
+    radius source-interface Management0\n!\nmanagement api http-commands\n   protocol
+    https\n   no shutdown\n   !\n   vrf default\n      no shutdown\n!\nend\n"
   AVD_s1-host2: "!RANCID-CONTENT-TYPE: arista\n!\ndaemon TerminAttr\n   exec /usr/bin/TerminAttr
     -cvaddr=192.168.0.5:9910 -cvauth=token,/tmp/token -smashexcludes=ale,flexCounter,hardware,kni,pulse,strata
     -ingestexclude=/Sysdb/cell/1/agent,/Sysdb/cell/2/agent -taillogs\n   no shutdown\n!\nvlan
@@ -93,7 +93,7 @@ cvp_configlets:
     Ethernet2\n   description S1-SPINE1_Ethernet3\n   no shutdown\n   channel-group
     2 mode active\n!\ninterface Ethernet3\n   description S1-SPINE2_Ethernet3\n   no
     shutdown\n   channel-group 2 mode active\n!\ninterface Ethernet4\n   description
-    S1-HOST1_Ethernet2\n   no shutdown\n   channel-group 4 mode active\n!\ninterface
+    S1-HOST1_Ethernet2\n   shutdown\n   channel-group 4 mode active\n!\ninterface
     Ethernet6\n   description MLAG_PEER_s1-leaf1_Ethernet6\n   no shutdown\n   channel-group
     1 mode active\n!\ninterface Management0\n   description oob_management\n   no
     shutdown\n   ip address 192.168.0.13/24\n!\ninterface Vlan4094\n   description
@@ -254,8 +254,7 @@ cvp_topology:
     devices: []
     parent_container: Tenant
   ATD_HOSTS:
-    devices:
-    - s1-host1
+    devices: []
     parent_container: ATD_FABRIC
   ATD_LEAFS:
     devices:

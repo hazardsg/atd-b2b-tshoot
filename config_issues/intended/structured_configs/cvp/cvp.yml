@@ -1,9 +1,5 @@
 ---
 cvp_devices:
-  - fqdn: s1-host1
-    parentContainerName: ATD_HOSTS
-    configlets:
-      - AVD_s1-host1
   - fqdn: s1-leaf1
     parentContainerName: ATD_LEAFS
     configlets:
